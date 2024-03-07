@@ -70,7 +70,7 @@ The website allows you to perform the following CRUD operations:
 
 ## Authors
 
-- [Your Name](https://github.com/rajivkr8207) - Initial work
+- [Rajiv Kumar](https://github.com/rajivkr8207) - Initial work
 
 ## License
 
