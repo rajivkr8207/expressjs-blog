@@ -1,0 +1,28 @@
+<%- include('./components/Header.ejs') %>
+
+<%   if(showblog){ %>
+      
+  <div class="container mx-auto px-4 py-8 ">
+    <div class="bg-white shadow-md rounded-lg px-8 py-6 ">
+      <h1 class="text-3xl font-bold text-gray-800 mb-4"><%= showblog.title %></h1>
+      <p class="text-gray-700 text-base mb-4"><%= showblog.description %></p>
+      <p class="text-gray-700 text-sm">Author Name: <span class="text-xl font-semibold"><%= showblog.author %></span>
+      </p>
+      <p class="text-gray-700 text-sm"><span class="text-black text-md my-5 font-semibold"><%= showblog.createdAt.toLocaleDateString() %></span>
+      </p>
+    </div>
+    
+  </div>
+  <div class="container text-end mb-3">
+    <a href="/edit/<%= showblog.id %>" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2">
+      Edit
+    </a>
+    <a href="/delete/<%= showblog.id %>" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+      Delete
+    </a>
+  </div>
+  <% } %>
+
+
+  
+<%- include('./components/Footer.ejs') %>

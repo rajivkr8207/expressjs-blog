@@ -1,0 +1,41 @@
+<%- include('./components/Header.ejs') %>
+
+<div class="container mx-auto my-3">
+    
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-2">
+
+        <% seeblog.forEach(element => { %>
+        <div class="max-w-sm rounded overflow-hidden shadow-lg border mx-auto">
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2"><%= element.title.substring(0,15).concat('...') %></div>
+              <p class="text-gray-700 text-base">
+                <%= element.description.substring(0,60).concat('....') %>
+              </p>
+              <p class="text-gray-700 text-base mt-2">
+                Author: <%= element.author %>
+              </p>
+              <p class="text-gray-700 text-base mt-2">
+                <%= element.createdAt.toLocaleDateString() %>
+              </p>
+              <div class="mt-4 gap-3">
+                <a href="/<%= element.id %>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
+                  Read more
+                </a>
+                <a href="/edit/<%= element.id %>" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2">
+                  Edit
+                </a>
+                <a href="/delete/<%= element.id %>" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                  Delete
+                </a>
+              </div>
+            </div>
+          </div>
+          
+         <% }); %>
+         
+    </div>
+</div>
+
+
+
+<%- include('./components/Footer.ejs') %>
